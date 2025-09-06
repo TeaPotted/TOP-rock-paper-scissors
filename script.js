@@ -57,4 +57,22 @@ function playGame() {
             }
         };
     };
+
+    // run playRound 5 times
+    for (let i = 0; i < 5; i++) {
+        playRound(getHumanChoice(), getComputerChoice());
+    };
+
+    // check who wins the game
+    if (humanScore === computerScore) {
+        console.log("Draw!");
+    } else if (humanScore > computerScore) {
+        console.log("You win!");
+    } else {
+        console.log("Computer wins!");
+    }
+
+    // show player and computer points
+    console.log("PLAYER POINTS: " + humanScore);
+    console.log("COMPUTER POINTS: " + computerScore);
 };
