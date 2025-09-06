@@ -62,7 +62,7 @@ function playGame() {
     for (let i = 0; i < 5; i++) {
         playRound(getHumanChoice(), getComputerChoice());
     };
-
+    
     // check who wins the game
     if (humanScore === computerScore) {
         console.log("Draw!");
@@ -76,3 +76,5 @@ function playGame() {
     console.log("PLAYER POINTS: " + humanScore);
     console.log("COMPUTER POINTS: " + computerScore);
 };
+
+playGame();
