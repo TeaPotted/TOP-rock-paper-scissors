@@ -17,3 +17,39 @@ function getHumanChoice() {
     // return user's choice
     return choice;
 };
+
+// create a function named playRound that takes two parameters: humanChoice and computerChoice
+function playRound(humanChoice, computerChoice) {
+    // make humanChoice case insensitive
+    humanChoice = humanChoice.toLowerCase();
+
+    // if humanChoice and computerChoice is the same:
+    if (humanChoice === computerChoice) {
+        // show a message saying "Draw! you both chose {choice}"
+        console.log(`Draw! You both chose ${humanChoice}`);
+    }
+
+    // else
+    else {
+        // if humanChoice beats computerChoice:
+        if (humanChoice === "rock" && computerChoice === "scissors" ||
+            humanChoice === "paper" && computerChoice === "rock" ||
+            humanChoice === "scissors" && computerChoice === "paper") {
+            // show a message saying: "You win! {humanChoice} beats {computerChoice}."
+            console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
+            // increment humanScore
+            humanScore++;
+        }
+        
+        // if computerChoice beats humanChoice:
+        if (computerChoice === "rock" && humanChoice === "scissors" ||
+            computerChoice === "paper" && humanChoice === "rock" ||
+            computerChoice === "scissors" && humanChoice === "paper"
+        ) {
+            // show a message saying: "You lose! {computerChoice} beats {humanChoice}."
+            console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
+            // increment computerScore
+            computerScore++;
+        }
+    };
+};
