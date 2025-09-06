@@ -7,3 +7,11 @@ function getComputerChoice() {
     // return the random value in choices
     return choices[random];
 };
+
+// create a function named getHumanChoice
+function getHumanChoice() {
+    // create a var named choice and assign the user's input using the prompt method
+    let choice = prompt("What do you choose?\n(Rock, Paper, Scissors)");
+    // return user's choice
+    return choice;
+};
