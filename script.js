@@ -57,11 +57,6 @@ function playGame() {
             }
         };
     };
-
-    // run playRound 5 times
-    for (let i = 0; i < 5; i++) {
-        playRound(getHumanChoice(), getComputerChoice());
-    };
     
     // check who wins the game
     if (humanScore === computerScore) {
