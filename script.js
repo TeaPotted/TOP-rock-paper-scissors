@@ -2,6 +2,7 @@ const choices = ["rock", "paper", "scissors"];
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
+const resultsDisplay = document.querySelector("#resultsDisplay");
 
 // create a function named getComputerChoice
 function getComputerChoice() {
@@ -24,6 +25,7 @@ function playGame() {
     // move humanScore and computerScore inside this function
     let humanScore = 0;
     let computerScore = 0;
+    let results = document.createElement("p");
 
     // move playRound function inside this function
     function playRound(humanChoice, computerChoice) {
@@ -33,7 +35,7 @@ function playGame() {
         // if humanChoice and computerChoice is the same:
         if (humanChoice === computerChoice) {
             // show a message saying "Draw! you both chose {choice}"
-            console.log(`Draw! You both chose ${humanChoice}`);
+            results.textContent = `Draw! You both chose ${humanChoice}`;
         }
 
         // else
@@ -43,7 +45,7 @@ function playGame() {
                 humanChoice === "paper" && computerChoice === "rock" ||
                 humanChoice === "scissors" && computerChoice === "paper") {
                 // show a message saying: "You win! {humanChoice} beats {computerChoice}."
-                console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
+                results.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
                 // increment humanScore
                 humanScore++;
             }
@@ -54,11 +56,12 @@ function playGame() {
                 computerChoice === "scissors" && humanChoice === "paper"
             ) {
                 // show a message saying: "You lose! {computerChoice} beats {humanChoice}."
-                console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
+                results.textContent = `You lose! ${computerChoice} beats ${humanChoice}.`;
                 // increment computerScore
                 computerScore++;
             }
         };
+        resultsDisplay.appendChild(results);
     };
 
     // if player clicks the rock button
