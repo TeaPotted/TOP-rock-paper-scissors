@@ -95,10 +95,6 @@ function playGame() {
     } else {
         console.log("Computer wins!");
     }
-
-    // show player and computer points
-    console.log("PLAYER POINTS: " + humanScore);
-    console.log("COMPUTER POINTS: " + computerScore);
 };
 
 playGame();
