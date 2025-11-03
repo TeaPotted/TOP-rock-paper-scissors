@@ -26,6 +26,8 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
     let results = document.createElement("p");
+    let humanScoreDisplay = document.createElement("h3");
+    let computerScoreDisplay = document.createElement("h3");
 
     // move playRound function inside this function
     function playRound(humanChoice, computerChoice) {
@@ -61,7 +63,13 @@ function playGame() {
                 computerScore++;
             }
         };
+        // set the textContents for the humanScore and computerScore displays
+        humanScoreDisplay.textContent = "Your score: " + humanScore;
+        computerScoreDisplay.textContent = "Computer score: " + computerScore;
+        
         resultsDisplay.appendChild(results);
+        resultsDisplay.appendChild(humanScoreDisplay);
+        resultsDisplay.appendChild(computerScoreDisplay);
     };
 
     // if player clicks the rock button
