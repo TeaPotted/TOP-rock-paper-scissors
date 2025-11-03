@@ -28,9 +28,25 @@ function playGame() {
     let results = document.createElement("p");
     let humanScoreDisplay = document.createElement("h3");
     let computerScoreDisplay = document.createElement("h3");
+    let winnerDisplay = document.createElement("h1");
 
     // move playRound function inside this function
     function playRound(humanChoice, computerChoice) {
+        // check if humanScore or computerScore reaches 5
+        if (!(humanScore < 5 && computerScore < 5)) {
+            // check who wins the game
+            if (humanScore === computerScore) {
+                winnerDisplay.textContent = "DRAW!";
+            } else if (humanScore > computerScore) {
+                winnerDisplay.textContent = "YOU WIN!";
+            } else {
+                winnerDisplay.textContent = "COMPUTER WINS!"
+            }
+            // display the winner
+            document.querySelector("body").appendChild(winnerDisplay);
+            return;
+        }
+        
         // make humanChoice case insensitive
         humanChoice = humanChoice.toLowerCase();
 
@@ -86,15 +102,6 @@ function playGame() {
     scissorsBtn.addEventListener("click", () => {
         playRound("scissors", getComputerChoice());
     });
-    
-    // check who wins the game
-    if (humanScore === computerScore) {
-        console.log("Draw!");
-    } else if (humanScore > computerScore) {
-        console.log("You win!");
-    } else {
-        console.log("Computer wins!");
-    }
 };
 
 playGame();
