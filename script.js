@@ -1,4 +1,7 @@
 const choices = ["rock", "paper", "scissors"];
+const rockBtn = document.querySelector("#rock");
+const paperBtn = document.querySelector("#paper");
+const scissorsBtn = document.querySelector("#scissors");
 
 // create a function named getComputerChoice
 function getComputerChoice() {
@@ -57,6 +60,21 @@ function playGame() {
             }
         };
     };
+
+    // if player clicks the rock button
+    rockBtn.addEventListener("click", () => {
+        playRound("rock", getComputerChoice());
+    });
+    
+    // if player clicks the paper button
+    paperBtn.addEventListener("click", () => {
+        playRound("paper", getComputerChoice());
+    });
+
+    // if player clicks scissors button
+    scissorsBtn.addEventListener("click", () => {
+        playRound("scissors", getComputerChoice());
+    });
     
     // check who wins the game
     if (humanScore === computerScore) {
