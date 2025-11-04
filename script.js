@@ -12,14 +12,6 @@ function getComputerChoice() {
     return choices[random];
 };
 
-// create a function named getHumanChoice
-function getHumanChoice() {
-    // create a var named choice and assign the user's input using the prompt method
-    let choice = prompt("What do you choose?\n(Rock, Paper, Scissors)");
-    // return user's choice
-    return choice;
-};
-
 // create a function named playGame
 function playGame() {
     // move humanScore and computerScore inside this function
@@ -46,9 +38,6 @@ function playGame() {
             document.querySelector("body").appendChild(winnerDisplay);
             return;
         }
-        
-        // make humanChoice case insensitive
-        humanChoice = humanChoice.toLowerCase();
 
         // if humanChoice and computerChoice is the same:
         if (humanChoice === computerChoice) {
